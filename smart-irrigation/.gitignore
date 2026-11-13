@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+*.db
+.pytest_cache/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# ML experiment tracking output (trained models in backend/models/irrigation are kept)
+backend/models/mlruns/
+backend/models/runs/
+backend/models/registry.json

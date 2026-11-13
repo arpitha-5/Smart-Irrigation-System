@@ -1,0 +1,38 @@
+{
+  "train_rows": 2462,
+  "test_rows": 346,
+  "n_features": 27,
+  "chosen_by": "time-ordered cross-validation on training days",
+  "test_metrics_scored_once": {
+    "two_stage_expected_value (chosen)": {
+      "MAE": 7.411,
+      "RMSE": 17.22,
+      "R2": 0.294
+    },
+    "random_forest": {
+      "MAE": 8.386,
+      "RMSE": 17.128,
+      "R2": 0.302
+    },
+    "gradient_boosting": {
+      "MAE": 7.476,
+      "RMSE": 16.267,
+      "R2": 0.37
+    },
+    "baseline_zero": {
+      "MAE": 6.516,
+      "RMSE": 21.508,
+      "R2": -0.101
+    },
+    "baseline_train_mean": {
+      "MAE": 9.483,
+      "RMSE": 20.694,
+      "R2": -0.019
+    }
+  },
+  "chosen_train_metrics": {
+    "MAE": 3.051,
+    "RMSE": 7.883,
+    "R2": 0.604
+  }
+}

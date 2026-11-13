@@ -1,0 +1,188 @@
+{
+  "protocol": {
+    "seed": 42,
+    "holdout_fraction": 0.2,
+    "cv_splits": 5,
+    "train_fields": 38,
+    "holdout_fields": 10,
+    "forecast_dropout_in_training": 0.15
+  },
+  "target_definition": "irrigation_mm = gross water depth applied on the day (mm of water over the field surface; net crop need divided by system efficiency). 1 mm over 1 ha = 10,000 L.",
+  "cross_validation": {
+    "random_forest": {
+      "threshold": 0.3,
+      "metrics": {
+        "n_rows": 5380,
+        "n_irrigation_days": 521,
+        "irrigation_day_rate": 0.0968,
+        "roc_auc": 0.8969,
+        "average_precision": 0.5066,
+        "threshold": 0.3,
+        "precision": 0.4224,
+        "recall": 0.7102,
+        "f1": 0.5297,
+        "depth_mae_mm_on_irrigation_days": 8.246,
+        "depth_rmse_mm_on_irrigation_days": 10.814,
+        "depth_r2_on_irrigation_days": 0.6453,
+        "depth_mae_mm_when_both_irrigate": 7.626
+      }
+    },
+    "gradient_boosting": {
+      "threshold": 0.3,
+      "metrics": {
+        "n_rows": 5380,
+        "n_irrigation_days": 521,
+        "irrigation_day_rate": 0.0968,
+        "roc_auc": 0.864,
+        "average_precision": 0.471,
+        "threshold": 0.3,
+        "precision": 0.4202,
+        "recall": 0.6315,
+        "f1": 0.5046,
+        "depth_mae_mm_on_irrigation_days": 8.465,
+        "depth_rmse_mm_on_irrigation_days": 11.305,
+        "depth_r2_on_irrigation_days": 0.6123,
+        "depth_mae_mm_when_both_irrigate": 8.467
+      }
+    }
+  },
+  "holdout": {
+    "random_forest": {
+      "threshold": 0.3,
+      "metrics": {
+        "n_rows": 1417,
+        "n_irrigation_days": 111,
+        "irrigation_day_rate": 0.0783,
+        "roc_auc": 0.9155,
+        "average_precision": 0.5838,
+        "threshold": 0.3,
+        "precision": 0.4306,
+        "recall": 0.8378,
+        "f1": 0.5688,
+        "depth_mae_mm_on_irrigation_days": 6.907,
+        "depth_rmse_mm_on_irrigation_days": 9.539,
+        "depth_r2_on_irrigation_days": 0.6776,
+        "depth_mae_mm_when_both_irrigate": 6.45
+      },
+      "metrics_forecast_unavailable": {
+        "n_rows": 1417,
+        "n_irrigation_days": 111,
+        "irrigation_day_rate": 0.0783,
+        "roc_auc": 0.9072,
+        "average_precision": 0.5229,
+        "threshold": 0.3,
+        "precision": 0.3629,
+        "recall": 0.8468,
+        "f1": 0.5081,
+        "depth_mae_mm_on_irrigation_days": 6.23,
+        "depth_rmse_mm_on_irrigation_days": 8.219,
+        "depth_r2_on_irrigation_days": 0.7607,
+        "depth_mae_mm_when_both_irrigate": 5.475
+      },
+      "by_crop": {
+        "cotton": {
+          "n_rows": 284,
+          "n_irrigation_days": 7,
+          "irrigation_day_rate": 0.0246,
+          "roc_auc": 0.8484,
+          "average_precision": 0.3008,
+          "threshold": 0.3,
+          "precision": 0.5,
+          "recall": 0.4286,
+          "f1": 0.4615,
+          "depth_mae_mm_on_irrigation_days": 11.067,
+          "depth_rmse_mm_on_irrigation_days": 13.31,
+          "depth_r2_on_irrigation_days": -2.1059,
+          "depth_mae_mm_when_both_irrigate": 5.415
+        },
+        "maize": {
+          "n_rows": 708,
+          "n_irrigation_days": 16,
+          "irrigation_day_rate": 0.0226,
+          "roc_auc": 0.7204,
+          "average_precision": 0.1021,
+          "threshold": 0.3,
+          "precision": 0.1379,
+          "recall": 0.25,
+          "f1": 0.1778,
+          "depth_mae_mm_on_irrigation_days": 10.476,
+          "depth_rmse_mm_on_irrigation_days": 13.042,
+          "depth_r2_on_irrigation_days": 0.3133,
+          "depth_mae_mm_when_both_irrigate": 16.101
+        },
+        "rice": {
+          "n_rows": 282,
+          "n_irrigation_days": 77,
+          "irrigation_day_rate": 0.273,
+          "roc_auc": 0.9014,
+          "average_precision": 0.6981,
+          "threshold": 0.3,
+          "precision": 0.5357,
+          "recall": 0.974,
+          "f1": 0.6912,
+          "depth_mae_mm_on_irrigation_days": 4.407,
+          "depth_rmse_mm_on_irrigation_days": 5.84,
+          "depth_r2_on_irrigation_days": -0.043,
+          "depth_mae_mm_when_both_irrigate": 4.493
+        },
+        "wheat": {
+          "n_rows": 143,
+          "n_irrigation_days": 11,
+          "irrigation_day_rate": 0.0769,
+          "roc_auc": 0.9401,
+          "average_precision": 0.459,
+          "threshold": 0.3,
+          "precision": 0.2683,
+          "recall": 1.0,
+          "f1": 0.4231,
+          "depth_mae_mm_on_irrigation_days": 16.563,
+          "depth_rmse_mm_on_irrigation_days": 17.868,
+          "depth_r2_on_irrigation_days": -11.4531,
+          "depth_mae_mm_when_both_irrigate": 16.563
+        }
+      }
+    },
+    "gradient_boosting": {
+      "threshold": 0.3,
+      "metrics": {
+        "n_rows": 1417,
+        "n_irrigation_days": 111,
+        "irrigation_day_rate": 0.0783,
+        "roc_auc": 0.9276,
+        "average_precision": 0.5751,
+        "threshold": 0.3,
+        "precision": 0.3983,
+        "recall": 0.8468,
+        "f1": 0.5418,
+        "depth_mae_mm_on_irrigation_days": 7.876,
+        "depth_rmse_mm_on_irrigation_days": 10.686,
+        "depth_r2_on_irrigation_days": 0.5954,
+        "depth_mae_mm_when_both_irrigate": 7.262
+      }
+    },
+    "lstm": {
+      "skipped": "PyTorch is not installed (pip install torch); LSTM comparison skipped."
+    }
+  },
+  "baselines": {
+    "always_no_irrigation": {
+      "recall": 0.0,
+      "precision": null,
+      "f1": 0.0,
+      "note": "never irrigates; scores well on overall MAE only because 90 % of days are dry"
+    },
+    "global_moisture_trigger": {
+      "trigger_below_pct": 21.0,
+      "precision": 0.2202,
+      "recall": 0.4324,
+      "f1": 0.2918,
+      "depth_mae_mm_on_irrigation_days": 6.783,
+      "note": "irrigate when moisture < trigger, apply the crop's mean training depth"
+    },
+    "mean_depth_only": {
+      "depth_mae_mm_on_irrigation_days": 14.815
+    }
+  },
+  "selected_model": "random_forest",
+  "selected_threshold": 0.3
+}

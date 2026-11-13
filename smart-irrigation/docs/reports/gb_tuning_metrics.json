@@ -1,0 +1,45 @@
+{
+  "cv_training_days": {
+    "current": {
+      "MAE": 5.057,
+      "RMSE": 11.814,
+      "R2": 0.185
+    },
+    "tuned": {
+      "MAE": 4.747,
+      "RMSE": 11.355,
+      "R2": 0.254
+    }
+  },
+  "test_scored_once": {
+    "current": {
+      "MAE": 7.476,
+      "RMSE": 16.267,
+      "R2": 0.37
+    },
+    "tuned": {
+      "MAE": 7.888,
+      "RMSE": 16.678,
+      "R2": 0.338
+    },
+    "zero_baseline": {
+      "MAE": 6.516,
+      "RMSE": 21.508,
+      "R2": -0.101
+    }
+  },
+  "test_rmse_95_interval": {
+    "current": [
+      13.52,
+      18.69
+    ],
+    "tuned": [
+      13.8,
+      19.54
+    ],
+    "zero_baseline": [
+      17.32,
+      25.59
+    ]
+  }
+}

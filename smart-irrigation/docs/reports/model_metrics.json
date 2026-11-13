@@ -1,0 +1,96 @@
+{
+  "dataset": {
+    "file": "irrigation_dataset_cleaned.csv",
+    "train_rows": 2462,
+    "test_rows": 346,
+    "n_features": 21,
+    "zero_target_pct_train": 90.7,
+    "zero_target_pct_test": 90.46
+  },
+  "test_evaluation": [
+    {
+      "Model": "baseline_zero",
+      "MAE (mm)": 6.516,
+      "RMSE (mm)": 21.508,
+      "R2": -0.101,
+      "MAE (Zero Days)": 0.0,
+      "MAE (Active Days)": 68.317
+    },
+    {
+      "Model": "baseline_mean",
+      "MAE (mm)": 9.483,
+      "RMSE (mm)": 20.694,
+      "R2": -0.019,
+      "MAE (Zero Days)": 3.667,
+      "MAE (Active Days)": 64.65
+    },
+    {
+      "Model": "random_forest",
+      "MAE (mm)": 8.742,
+      "RMSE (mm)": 16.708,
+      "R2": 0.336,
+      "MAE (Zero Days)": 4.976,
+      "MAE (Active Days)": 44.46
+    },
+    {
+      "Model": "gradient_boosting",
+      "MAE (mm)": 8.169,
+      "RMSE (mm)": 16.127,
+      "R2": 0.381,
+      "MAE (Zero Days)": 4.658,
+      "MAE (Active Days)": 41.471
+    },
+    {
+      "Model": "two_stage_hurdle",
+      "MAE (mm)": 6.114,
+      "RMSE (mm)": 20.183,
+      "R2": 0.03,
+      "MAE (Zero Days)": 1.724,
+      "MAE (Active Days)": 47.753
+    },
+    {
+      "Model": "two_stage_expected_value",
+      "MAE (mm)": 7.389,
+      "RMSE (mm)": 16.38,
+      "R2": 0.361,
+      "MAE (Zero Days)": 3.562,
+      "MAE (Active Days)": 43.687
+    }
+  ],
+  "cross_validation": [
+    {
+      "Model": "two_stage_expected_value",
+      "CV MAE": 4.123,
+      "CV RMSE": 11.602,
+      "RMSE std": 3.819,
+      "CV R2": 0.215,
+      "R2 std": 0.119
+    },
+    {
+      "Model": "random_forest",
+      "CV MAE": 4.563,
+      "CV RMSE": 11.682,
+      "RMSE std": 4.214,
+      "CV R2": 0.211,
+      "R2 std": 0.166
+    },
+    {
+      "Model": "gradient_boosting",
+      "CV MAE": 5.788,
+      "CV RMSE": 12.089,
+      "RMSE std": 3.479,
+      "CV R2": 0.138,
+      "R2 std": 0.036
+    },
+    {
+      "Model": "two_stage_hurdle",
+      "CV MAE": 3.277,
+      "CV RMSE": 12.632,
+      "RMSE std": 4.051,
+      "CV R2": 0.069,
+      "R2 std": 0.09
+    }
+  ],
+  "selected_model": "gradient_boosting",
+  "diagnostic_plot": "reports/residuals_diagnostic.png"
+}
